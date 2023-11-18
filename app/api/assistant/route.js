@@ -12,7 +12,7 @@ export async function GET() {
   //     method: "GET",
   //     headers: {
   //       "Content-Type": "application/json",
-  //       "Authorization": "Bearer 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",
+  //       "Authorization": "Bearer ",
   //       "OpenAI-Beta": "assistants=v1",
   //     },
   //   })
