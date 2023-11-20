@@ -1,10 +1,13 @@
+import { GetAssistant, GetAssistants } from "./api/assistant/apiconfig"
 import Form from "./components/Form"
+import Select from "./components/Select"
 
 export default async function Home() {
-  const response = await fetch("http://localhost:3000/api/assistant")
+  const assistants = await GetAssistants()
   return (
     <div className='p-10'>
-      <Form />
+      <Select assistants={assistants} />
+      <Form assistants={assistants} />
     </div>
   )
 }
