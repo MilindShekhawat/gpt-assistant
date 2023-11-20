@@ -1,14 +1,13 @@
 "use client"
 import { useState } from "react"
 
-export default function Form() {
+export default function Form(props) {
   const [inputValue, setInputValue] = useState("")
   const [validationMessage, setValidationMessage] = useState("")
 
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value)
-  }
-
+  // const handleInputChange = (e) => {
+  //   setInputValue(e.target.value)
+  // }
   const handleSubmit = (e) => {
     e.preventDefault()
     if (inputValue.trim() !== "") {
@@ -22,12 +21,12 @@ export default function Form() {
     <div>
       <form
         onSubmit={handleSubmit}
-        className='my-4'>
+        className='flex gap-2 my-4 w-96'>
         <input
           type='text'
           value={inputValue}
-          onChange={handleInputChange}
-          className='border-2 border-neutral-00 rounded-md p-2 mr-2'
+          onChange={(e) => setInputValue(e.target.value)}
+          className='p-2 w-full border-2 border-neutral-00 rounded-md'
           placeholder='Enter something...'
         />
         <button
